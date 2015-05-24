@@ -4,7 +4,8 @@
   angular.module('rightNow',[
     'angular-meteor',
     'ui.router',
-    'ionic'
+    'ionic',
+    'leaflet-directive'
   ]);
 
   function onReady() {

@@ -20,9 +20,14 @@
           url: '/clubs',
           templateUrl: 'client/clubs/views/clubs-list.ng.html',
           controller: 'ClubsListCtrl as vm'
+        })
+        .state('map', {
+          url: '/map',
+          templateUrl: 'client/clubs/views/map.ng.html',
+          controller: 'MapCtrl as vm'
         });
 
-      $urlRouterProvider.otherwise('/clubs');
-    });  
+      $urlRouterProvider.otherwise('/map');
+    });
 })();
 
