@@ -8,3 +8,5 @@ meteor-platform
 urigo:angular
 angularui:angular-ui-router
 urigo:ionic
+fourseven:scss
+meteoric:ionic-sass
