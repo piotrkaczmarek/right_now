@@ -19,8 +19,7 @@
         .state('clubs', {
           url: '/clubs',
           templateUrl: 'client/clubs/views/clubs-list.ng.html',
-          controller: 'ClubsListCtrl',
-          controllerAs: 'vm'
+          controller: 'ClubsListCtrl as vm'
         });
 
       $urlRouterProvider.otherwise('/clubs');

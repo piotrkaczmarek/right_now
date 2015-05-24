@@ -3,7 +3,8 @@
 
   angular.module('rightNow',[
     'angular-meteor',
-    'ui.router'
+    'ui.router',
+    'ionic'
   ]);
 
   function onReady() {
