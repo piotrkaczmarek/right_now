@@ -5,10 +5,10 @@
     .module('rightNow')
     .controller('ClubsListCtrl', ClubsListCtrl);
 
-  ClubsListCtrl.$inject = ['$meteor'];
+  ClubsListCtrl.$inject = ['ClubsFactory'];
 
-  function ClubsListCtrl($meteor) {
+  function ClubsListCtrl(ClubsFactory) {
     var vm = this;
-    vm.clubs = $meteor.collection(Clubs).subscribe('clubs');
+    vm.clubs = ClubsFactory.clubs();
   }
 })();

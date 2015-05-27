@@ -16,18 +16,34 @@
       $locationProvider.html5Mode(true);
 
       $stateProvider
-        .state('clubs', {
-          url: '/clubs',
-          templateUrl: 'client/clubs/views/clubs-list.ng.html',
-          controller: 'ClubsListCtrl as vm'
+        .state('tabs', {
+          abstract: true,
+          templateUrl: 'client/clubs/views/tabs.ng.html'
         })
-        .state('map', {
+        .state('tabs.list', {
+          url: '/list',
+          views: {
+            'tab-list': {
+              templateUrl: 'client/clubs/views/clubs-list.ng.html',
+              controller: 'ClubsListCtrl as vm'
+            }
+          }
+        })
+        .state('tabs.map', {
           url: '/map',
-          templateUrl: 'client/clubs/views/map.ng.html',
-          controller: 'MapCtrl as vm'
+          views: {
+            'tab-map': {
+              templateUrl: 'client/clubs/views/map.ng.html',
+              controller: 'MapCtrl as vm',
+              resolve: {
+                'subscribe': ['$meteor', function($meteor) {
+                  return $meteor.subscribe('clubs');
+                }]
+              }
+            }
+          }
         });
 
-      $urlRouterProvider.otherwise('/map');
+      $urlRouterProvider.otherwise('/list');
     });
 })();
-
