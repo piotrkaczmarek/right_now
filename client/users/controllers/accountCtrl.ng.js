@@ -8,6 +8,6 @@
   AccountCtrl.$inject = [];
 
   function AccountCtrl() {
-    var vm = this;
+    // var vm = this;
   }
 })();

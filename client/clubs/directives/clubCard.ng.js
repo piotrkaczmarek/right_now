@@ -18,7 +18,7 @@
     ];
     var scope = {};
     permittedAttributes.forEach(function(attribute) {
-      scope[attribute] = '@'
+      scope[attribute] = '@';
     });
 
     var directive = {

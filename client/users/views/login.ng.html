@@ -1,20 +1,20 @@
 <ion-view>
   <ion-content layout="row">
-    <div ng-show="lc.error"><small>{{ lc.error }}</small></div>
+    <div ng-show="vm.error"><small>{{ vm.error }}</small></div>
     <form layout="column">
       <div class="list">
         <label class="item item-input item-stacked-label">
           <span class="input-label">Email</span>
-          <input type="text" ng-model="lc.credentials.email" aria-label="email" />
+          <input type="text" ng-model="vm.credentials.email" aria-label="email" />
         </label>
         <label class="item item-input item-stacked-label">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="lc.credentials.password" aria-label="password" />
+          <input type="password" ng-model="vm.credentials.password" aria-label="password" />
         </label>
       </div>
       <div class="padding">
-        <button class="button button-light" ng-click="lc.login()" aria-label="login">Sign In</button>
-        <button class="button button-light" ng-click="rc.register()">Create Account</button>
+        <button class="button button-light" ng-click="vm.login()" aria-label="login">Sign In</button>
+        <button class="button button-light" ng-click="vm.register()">Create Account</button>
       </div>
     </form>
     <div class="padding">
