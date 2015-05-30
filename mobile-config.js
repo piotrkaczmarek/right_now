@@ -1,1 +1,1 @@
-App.accessRule('http://*.openstreetmap.fr');
+App.accessRule('http://*.mqcdn.com');

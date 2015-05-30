@@ -17,8 +17,8 @@
     vm.layers = {
       baselayers: {
         osm: {
-            name: 'OpenStreetMap',
-            url: 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+            name: 'MapQuest',
+            url: 'http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
             type: 'xyz'
         }
       }

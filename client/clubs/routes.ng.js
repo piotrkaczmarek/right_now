@@ -42,6 +42,38 @@
               }
             }
           }
+        })
+        .state('tabs.account', {
+          url: '/account',
+            templateUrl: 'client/clubs/views/account.ng.html',
+            controller: 'AccountCtrl as vm'
+        })
+        .state('tabs.login', {
+          url: '/login',
+            templateUrl: 'client/users/views/login.ng.html',
+            controller: 'LoginCtrl as lc'
+        })
+        .state('tabs.register',{
+          url: '/register',
+            templateUrl: 'client/users/views/register.ng.html',
+            controller: 'RegisterCtrl as rc'
+        })
+        .state('tabs.resetpassword', {
+          url: '/resetpw',
+            templateUrl: 'client/users/views/reset-password.ng.html',
+            controller: 'ResetCtrl as rpc'
+        })
+        .state('tabs.logout', {
+          url: '/logout',
+            resolve: {
+              "logout": ['$meteor', '$state', function($meteor, $state) {
+                return $meteor.logout().then(function(){
+                  $state.go('tabs.login');
+                }, function(err){
+                  console.log('logout error - ', err);
+                });
+              }]
+            }
         });
 
       $urlRouterProvider.otherwise('/list');

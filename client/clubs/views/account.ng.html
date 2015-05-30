@@ -1,0 +1,7 @@
+<ion-view>
+  <ion-content>
+    <button class="button button-light" ui-sref="tabs.login" ng-hide="$root.currentUser">Login</button>
+    <div ng-show="$root.currentUser">{{ $root.currentUser }}</div>
+    <button class="button button-light" ui-sref="tabs.logout" ng-show="$root.currentUser">Logout</button>
+  </ion-content>
+</ion-view>
