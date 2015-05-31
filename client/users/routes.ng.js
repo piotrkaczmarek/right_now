@@ -2,7 +2,10 @@
   'use strict';
 
   angular.module('rightNow').config(function($urlRouterProvider, $stateProvider, $locationProvider){
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
 
     $stateProvider
       .state('tabs.account', {

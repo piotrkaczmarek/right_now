@@ -13,3 +13,6 @@ meteoric:ionic-sass
 piotrkaczmarek:angular-leaflet-directive
 mrt:leaflet-label
 accounts-password
+angular:angular-mocks
+sanjo:jasmine
+velocity:html-reporter
