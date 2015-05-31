@@ -25,7 +25,10 @@
     var directive = {
       templateUrl: 'client/clubs/views/club-card.ng.html',
       restrict: 'E',
-      scope: scope
+      scope: scope,
+      controller: ['crowdLabels', '$scope', function(crowdLabels, $scope) {
+        $scope.crowdLabels = crowdLabels;
+      }]
     };
     return directive;
   }

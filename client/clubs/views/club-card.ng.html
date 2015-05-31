@@ -7,7 +7,7 @@
 <div class="row">
   <ion-list>
     <ion-item>
-      <b>Crowd:</b> {{crowd | crowdFilter}}
+      <b>Crowd:</b> {{crowd | labelFilter : crowdLabels}}
     </ion-item>
     <ion-item>
       <b>Queue:</b> {{queue}}

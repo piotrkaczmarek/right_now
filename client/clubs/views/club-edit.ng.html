@@ -13,7 +13,7 @@
             <input type="range" name="crowd" min="0" max="100" ng-model="vm.club.crowd">
           </div>
           <div class="card item item-text-wrap">
-            {{vm.club.crowd | crowdFilter}}
+            {{vm.club.crowd | labelFilter : vm.crowdLabels}}
           </div>
         </label>
         <label class="item range item-input">
