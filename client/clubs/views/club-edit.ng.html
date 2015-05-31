@@ -6,11 +6,15 @@
       </ion-header-bar>
     </div>
     <div class="row">
-      <div class="list">
+      <div class="list col col-100">
         <label class="item range item-input">
-          <span class="input-label">Crowd</span>
-          <span><input type="range" name="crowd" min="0" max="100" ng-model="vm.club.crowd"></span>
-          {{vm.club.crowd}}
+          <div class="input-label">Crowd</div>
+          <div class="">
+            <input type="range" name="crowd" min="0" max="100" ng-model="vm.club.crowd">
+          </div>
+          <div class="card item item-text-wrap">
+            {{vm.club.crowd | crowdFilter}}
+          </div>
         </label>
         <label class="item range item-input">
           <span class="input-label">Queue</span>
