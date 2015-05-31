@@ -24,9 +24,8 @@
       }
     };
     vm.clubs = ClubsFactory.clubs();
-    vm.markers = vm.clubs.map(function(club, index) {
-      var marker = {};
-      return marker['m' + index] = {
+    vm.markers = vm.clubs.map(function(club) {
+      return {
         lat: club.location.lat,
         lng: club.location.lng,
         label: {

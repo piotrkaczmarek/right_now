@@ -25,7 +25,7 @@
           vm.error = 'Error sending forgot password email - ' + err;
         }
       );
-    };
+    }
   }
 })();
 

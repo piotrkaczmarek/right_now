@@ -12,11 +12,13 @@
       clubs: clubs,
       club: club
     };
+
     function club(id) {
       return $meteor.object(Clubs, id, false).subscribe('clubs');
-    };
+    }
+
     function clubs() {
       return $meteor.collection(Clubs, false).subscribe('clubs');
-    };
+    }
   }
 })();

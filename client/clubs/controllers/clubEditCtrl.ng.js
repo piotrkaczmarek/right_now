@@ -17,6 +17,6 @@
       vm.club.reportTime = new Date();
       vm.club.save();
       vm.goBack();
-    };
+    }
   }
 })();

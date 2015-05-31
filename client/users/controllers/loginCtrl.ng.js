@@ -28,7 +28,7 @@
           vm.error = 'Login error - ' + err;
         }
       );
-    };
+    }
 
     function register(){
       $meteor.createUser(vm.credentials).then(
@@ -39,7 +39,6 @@
           vm.error = 'Registration error - ' + err;
         }
       );
-    };
-
+    }
   }
 })();

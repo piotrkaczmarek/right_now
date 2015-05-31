@@ -18,7 +18,7 @@
       if($rootScope.currentUser) {
         $state.go(state);
       }
-    };
+    }
 
     function previousState() {
       var previousView = $ionicHistory.backView();
@@ -27,10 +27,10 @@
       } else {
         return 'tabs.list';
       }
-    };
+    }
 
     function goBack() {
       $state.go(previousState());
-    };
+    }
   }
 })();
