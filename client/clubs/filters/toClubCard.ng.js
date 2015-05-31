@@ -5,9 +5,9 @@
     .module('rightNow')
     .filter('toClubCard', toClubCard);
 
-  toClubCard.$inject = [];
+  toClubCard.$inject = ['$filter'];
 
-  function toClubCard() {
+  function toClubCard($filter) {
     var filter = function(club) {
       var permittedAttributes = [
         'name',
@@ -17,10 +17,13 @@
         'musicType',
         'musicPlaying'
       ];
+      var dateFilter = $filter('date');
       var htmlAtributes = permittedAttributes.map(function(attribute) {
         return attribute.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() + '="' + club[attribute]+'"';
       }).join(' ');
-      return '<club-card id=' + club._id + ' ' + htmlAtributes + '></club-card>';
+      return '<club-card id="' + club._id +
+        '" report-time="' + dateFilter(club.reportTime, 'HH:mm') +
+        '" ' + htmlAtributes + '></club-card>';
     };
     return filter;
   }

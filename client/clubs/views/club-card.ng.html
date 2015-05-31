@@ -7,19 +7,22 @@
 <div class="row">
   <ion-list>
     <ion-item>
-      <b>Crowd:</b> {{crowd | labelFilter : crowdLabels}}
+      <b>Crowd:</b> {{crowd | labelFilter : attributeLabels.crowd}}
     </ion-item>
     <ion-item>
-      <b>Queue:</b> {{queue}}
+      <b>Entry Queue:</b> {{queue | labelFilter : attributeLabels.queue}}
     </ion-item>
     <ion-item>
-      <b>Gender Ratio:</b> {{genderRatio}}
+      <b>Gender Ratio:</b> {{genderRatio | labelFilter : attributeLabels.genderRatio}}
     </ion-item>
     <ion-item>
       <b>Music Type:</b> {{musicType}}
     </ion-item>
     <ion-item>
       <b>Now playing:</b> {{musicPlaying}}
+    </ion-item>
+    <ion-item>
+      <b>Reported on:</b> {{reportTime | date : 'HH:mm'}}
     </ion-item>
   </ion-list>
 </div>

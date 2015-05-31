@@ -12,25 +12,35 @@
           <div class="">
             <input type="range" name="crowd" min="0" max="100" ng-model="vm.club.crowd">
           </div>
-          <div class="card item item-text-wrap">
-            {{vm.club.crowd | labelFilter : vm.crowdLabels}}
-          </div>
+          {{vm.club.crowd | labelFilter : vm.attributeLabels.crowd}}
         </label>
         <label class="item range item-input">
-          <span class="input-label">Queue</span>
+          <span class="input-label">Entry Queue</span>
           <span><input type="range" name="queue" min="0" max="100" ng-model="vm.club.queue"></span>
-          {{vm.club.queue}}
+          {{vm.club.queue | labelFilter : vm.attributeLabels.queue}}
         </label>
         <label class="item range item-input">
           <span class="input-label">Gender Ratio</span>
           <span><input type="range" name="gender-ratio" min="0" max="100" ng-model="vm.club.genderRatio"></span>
-          {{vm.club.genderRatio}}
+          {{vm.club.genderRatio | labelFilter : vm.attributeLabels.genderRatio}}
         </label>
-        <ion-item>
-          <b>Music Type:</b> {{vm.club.musicType}}
+        <ion-item class="item item-input item-select">
+          <div class="input-label">
+            Music Type
+          </div>
+          <select ng-model="vm.club.musicType">
+            <option selected>Pop</option>
+            <option>Rock</option>
+            <option>EDM</option>
+            <option>House</option>
+            <option>80s/90s</option>
+          </select>
         </ion-item>
-        <ion-item>
-          <b>Now playing:</b> {{vm.club.musicPlaying}}
+        <ion-item class="item item-input">
+          <div class="input-label">
+            Now Playing
+          </div>
+          <input type="text" ng-model="vm.club.musicPlaying">
         </ion-item>
       </div>
     </div>

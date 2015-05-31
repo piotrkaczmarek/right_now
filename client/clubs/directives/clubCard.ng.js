@@ -15,7 +15,8 @@
       'queue',
       'genderRatio',
       'musicType',
-      'musicPlaying'
+      'musicPlaying',
+      'reportTime'
     ];
     var scope = {};
     permittedAttributes.forEach(function(attribute) {
@@ -26,8 +27,8 @@
       templateUrl: 'client/clubs/views/club-card.ng.html',
       restrict: 'E',
       scope: scope,
-      controller: ['crowdLabels', '$scope', function(crowdLabels, $scope) {
-        $scope.crowdLabels = crowdLabels;
+      controller: ['attributeLabels', '$scope', function(attributeLabels, $scope) {
+        $scope.attributeLabels = attributeLabels;
       }]
     };
     return directive;
