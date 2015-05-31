@@ -9,10 +9,11 @@
 
   function ClubCard() {
     var permittedAttributes = [
+      'id',
       'name',
       'crowd',
       'queue',
-      'maleToFemaleRatio',
+      'genderRatio',
       'musicType',
       'musicPlaying'
     ];

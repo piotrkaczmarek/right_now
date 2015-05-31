@@ -18,6 +18,6 @@
         templateUrl: 'client/common/views/tabs.ng.html'
       });
 
-    // $urlRouterProvider.otherwise('/list');
+    $urlRouterProvider.otherwise('/list');
     });
 })();

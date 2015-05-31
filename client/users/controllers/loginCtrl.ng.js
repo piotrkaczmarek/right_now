@@ -5,11 +5,11 @@
     .module('rightNow')
     .controller("LoginCtrl", LoginCtrl);
 
-  LoginCtrl.$inject = ['$meteor', '$state', '$rootScope'];
+  LoginCtrl.$inject = ['$meteor', '$state', '$rootScope', 'RouterService'];
 
-  function LoginCtrl($meteor, $state, $rootScope){
+  function LoginCtrl($meteor, $state, $rootScope, RouterService){
     var vm = this;
-    redirectIfLoggedIn();
+    RouterService.redirectIfLoggedIn('tabs.account');
 
     vm.credentials = {
       email: '',
@@ -22,7 +22,7 @@
     function login() {
       $meteor.loginWithPassword(vm.credentials.email, vm.credentials.password).then(
         function(){
-          $state.go('tabs.account');
+          $state.go('tabs.map');
         },
         function(err){
           vm.error = 'Login error - ' + err;
@@ -41,10 +41,5 @@
       );
     };
 
-    function redirectIfLoggedIn() {
-      if($rootScope.currentUser) {
-        $state.go('tabs.account');
-      }
-    }
   }
 })();

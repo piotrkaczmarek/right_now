@@ -27,6 +27,16 @@
             }
           }
         }
+      })
+      .state('club-edit', {
+        url: '/clubs/:id',
+        templateUrl: 'client/clubs/views/club-edit.ng.html',
+        controller: 'ClubEditCtrl as vm',
+        resolve: {
+          'currentUser': ['$meteor', function($meteor){
+            return $meteor.requireUser();
+          }]
+        }
       });
     });
 })();

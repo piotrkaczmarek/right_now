@@ -1,1 +1,2 @@
-App.accessRule('http://*.mqcdn.com');
+// App.accessRule('http://*.mqcdn.com');
+App.accessRule('*');

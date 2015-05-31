@@ -1,6 +1,7 @@
 <div class="row club-card">
   <ion-header-bar class="bar bar-header bar-positive">
     <h1 class="title">{{name}}</h1>
+    <button class="button" ng-if="$root.currentUser" ui-sref="club-edit({id: id})">Edit</button>
   </ion-header-bar>
 </div>
 <div class="row">
@@ -12,7 +13,7 @@
       <b>Queue:</b> {{queue}}
     </ion-item>
     <ion-item>
-      <b>Male to Female Ratio:</b> {{maleToFemaleRatio}}
+      <b>Gender Ratio:</b> {{genderRatio}}
     </ion-item>
     <ion-item>
       <b>Music Type:</b> {{musicType}}
