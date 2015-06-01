@@ -5,10 +5,11 @@
     .module('rightNow')
     .controller('ClubsListCtrl', ClubsListCtrl);
 
-  ClubsListCtrl.$inject = ['ClubsFactory'];
+  ClubsListCtrl.$inject = ['ClubsFactory', 'attributeLabels'];
 
-  function ClubsListCtrl(ClubsFactory) {
+  function ClubsListCtrl(ClubsFactory, attributeLabels) {
     var vm = this;
     vm.clubs = ClubsFactory.clubs();
+    vm.attributeLabels = attributeLabels;
   }
 })();

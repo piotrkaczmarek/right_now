@@ -1,28 +1,28 @@
 <div class="row club-card">
   <ion-header-bar class="bar bar-header bar-positive">
-    <h1 class="title">{{name}}</h1>
-    <button class="button" ng-if="$root.currentUser" ui-sref="club-edit({id: id})">Edit</button>
+    <h1 class="title">{{club.name}}</h1>
+    <button class="button" ng-if="$root.currentUser" ui-sref="club-edit({id: club._id})">Edit</button>
   </ion-header-bar>
 </div>
 <div class="row">
   <ion-list>
     <ion-item>
-      <b>Crowd:</b> {{crowd | labelFilter : attributeLabels.crowd}}
+      <b>Crowd:</b> {{club.crowd | labelFilter : vm.attributeLabels.crowd}}
     </ion-item>
     <ion-item>
-      <b>Entry Queue:</b> {{queue | labelFilter : attributeLabels.queue}}
+      <b>Entry Queue:</b> {{club.queue | labelFilter : vm.attributeLabels.queue}}
     </ion-item>
     <ion-item>
-      <b>Gender Ratio:</b> {{genderRatio | labelFilter : attributeLabels.genderRatio}}
+      <b>Gender Ratio:</b> {{club.genderRatio | labelFilter : vm.attributeLabels.genderRatio}}
     </ion-item>
     <ion-item>
-      <b>Music Type:</b> {{musicType}}
+      <b>Music Type:</b> {{club.musicType}}
     </ion-item>
     <ion-item>
-      <b>Now playing:</b> {{musicPlaying}}
+      <b>Now playing:</b> {{club.musicPlaying}}
     </ion-item>
     <ion-item>
-      <b>Reported on:</b> {{reportTime | date : 'HH:mm'}}
+      <b>Reported on:</b> {{club.reportTime | date : 'HH:mm'}}
     </ion-item>
   </ion-list>
 </div>

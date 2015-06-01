@@ -5,10 +5,11 @@
     .module('rightNow')
     .controller('MapCtrl', MapCtrl);
 
-  MapCtrl.$inject = ['ClubsFactory', '$filter'];
+  MapCtrl.$inject = ['ClubsFactory', '$scope', 'attributeLabels'];
 
-  function MapCtrl(ClubsFactory, $filter) {
+  function MapCtrl(ClubsFactory, $scope, attributeLabels) {
     var vm = this;
+    vm.attributeLabels = attributeLabels;
     vm.warsaw = {
       lat: 52.233,
       lng: 21.014,
@@ -28,14 +29,21 @@
       return {
         lat: club.location.lat,
         lng: club.location.lng,
-        label: {
-          message: $filter('toClubCard')(club),
-          // https://github.com/Leaflet/Leaflet.label#options
-          options: {
-            noHide: true,
-            direction: 'auto'
-          }
-        }
+        compileMessage: true,
+        getMessageScope: function() {
+          var markerScope = $scope.$new();
+          markerScope.club = club;
+          return markerScope;
+        },
+        message: '<club-card></club-card>'
+        // label: {
+        //   message: $filter('toClubCard')(club),
+        //   // https://github.com/Leaflet/Leaflet.label#options
+        //   options: {
+        //     noHide: true,
+        //     direction: 'auto'
+        //   }
+        // }
       };
     });
   }

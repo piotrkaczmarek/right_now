@@ -2,16 +2,7 @@
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="club in vm.clubs">
-        <club-card
-          id="{{club._id}}"
-          name="{{club.name}}"
-          crowd="{{club.crowd}}"
-          queue="{{club.queue}}"
-          gender-ratio="{{club.genderRatio}}"
-          music-type="{{club.musicType}}"
-          music-playing="{{club.musicPlaying}}"
-          report-time="{{club.reportTime | date : 'HH:mm'}}">
-        </club-card>
+        <club-card></club-card>
       </ion-item>
     </ion-list>
   </ion-content>

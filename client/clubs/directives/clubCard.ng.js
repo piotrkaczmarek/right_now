@@ -8,28 +8,9 @@
   ClubCard.$inject = [];
 
   function ClubCard() {
-    var permittedAttributes = [
-      'id',
-      'name',
-      'crowd',
-      'queue',
-      'genderRatio',
-      'musicType',
-      'musicPlaying',
-      'reportTime'
-    ];
-    var scope = {};
-    permittedAttributes.forEach(function(attribute) {
-      scope[attribute] = '@';
-    });
-
     var directive = {
       templateUrl: 'client/clubs/views/club-card.ng.html',
-      restrict: 'E',
-      scope: scope,
-      controller: ['attributeLabels', '$scope', function(attributeLabels, $scope) {
-        $scope.attributeLabels = attributeLabels;
-      }]
+      restrict: 'E'
     };
     return directive;
   }
