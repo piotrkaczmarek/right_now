@@ -1,28 +1,24 @@
-<div class="row club-card">
-  <ion-header-bar class="bar bar-header bar-positive">
-    <h1 class="title">{{club.name}}</h1>
-    <button class="button" ng-if="$root.currentUser" ui-sref="club-edit({id: club._id})">Edit</button>
-  </ion-header-bar>
-</div>
-<div class="row">
-  <ion-list>
-    <ion-item>
-      <b>Crowd:</b> {{club.crowd | labelFilter : vm.attributeLabels.crowd}}
-    </ion-item>
-    <ion-item>
-      <b>Entry Queue:</b> {{club.queue | labelFilter : vm.attributeLabels.queue}}
-    </ion-item>
-    <ion-item>
-      <b>Gender Ratio:</b> {{club.genderRatio | labelFilter : vm.attributeLabels.genderRatio}}
-    </ion-item>
-    <ion-item>
-      <b>Music Type:</b> {{club.musicType}}
-    </ion-item>
-    <ion-item>
-      <b>Now playing:</b> {{club.musicPlaying}}
-    </ion-item>
-    <ion-item>
-      <b>Reported on:</b> {{club.reportTime | date : 'HH:mm'}}
-    </ion-item>
-  </ion-list>
-</div>
+<md-subheader>
+  {{club.name}}
+  <md-button class="md-primary" ng-if="$root.currentUser" ui-sref="club-edit({id: club._id})">Edit</md-button>
+</md-subheader>
+<md-list>
+  <md-list-item>
+    <b>Crowd:</b> {{club.crowd | labelFilter : vm.attributeLabels.crowd}}
+  </md-list-item>
+  <md-list-item>
+    <b>Entry Queue:</b> {{club.queue | labelFilter : vm.attributeLabels.queue}}
+  </md-list-item>
+  <md-list-item>
+    <b>Gender Ratio:</b> {{club.genderRatio | labelFilter : vm.attributeLabels.genderRatio}}
+  </md-list-item>
+  <md-list-item>
+    <b>Music Type:</b> {{club.musicType}}
+  </md-list-item>
+  <md-list-item>
+    <b>Now playing:</b> {{club.musicPlaying}}
+  </md-list-item>
+  <md-list-item>
+    <b>Reported on:</b> {{club.reportTime | date : 'HH:mm'}}
+  </md-list-item>
+</md-list>

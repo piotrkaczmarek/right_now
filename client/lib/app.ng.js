@@ -5,7 +5,8 @@
     'angular-meteor',
     'ui.router',
     'ionic',
-    'leaflet-directive'
+    'leaflet-directive',
+    'ngMaterial'
   ]);
 
   function onReady() {

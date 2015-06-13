@@ -12,12 +12,6 @@
   angular.module('rightNow').config(function($urlRouterProvider, $stateProvider, $locationProvider){
     $locationProvider.html5Mode(true);
 
-    $stateProvider
-      .state('tabs', {
-        abstract: true,
-        templateUrl: 'client/common/views/tabs.ng.html'
-      });
-
-    $urlRouterProvider.otherwise('/list');
+    $urlRouterProvider.otherwise('/');
     });
 })();

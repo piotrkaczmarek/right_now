@@ -10,7 +10,8 @@
   function ClubCard() {
     var directive = {
       templateUrl: 'client/clubs/views/club-card.ng.html',
-      restrict: 'E'
+      restrict: 'E',
+      controller: 'ClubCardCtrl as vm'
     };
     return directive;
   }

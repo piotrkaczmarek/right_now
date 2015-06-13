@@ -5,5 +5,12 @@
 </head>
 
 <body layout="column">
-  <ion-nav-view></ion-nav-view>
+  <md-toolbar style="position: absolute; z-index: 1">
+    <div class="md-toolbar-tools">
+      <div class="md-indent md-headline">
+        <h1>WARSAW</h1>
+      </div>
+    </div>
+  </md-toolbar>
+  <ui-view name="main-map"></ui-view>
 </body>
