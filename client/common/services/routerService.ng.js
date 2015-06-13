@@ -25,7 +25,7 @@
       if(previousView) {
         return previousView.stateId;
       } else {
-        return 'tabs.list';
+        return 'map';
       }
     }
 

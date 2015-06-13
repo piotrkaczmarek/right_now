@@ -19,7 +19,7 @@
     function reset(){
       $meteor.forgotPassword(vm.credentials).then(
         function(){
-          $state.go('tabs.login');
+          $state.go('login');
         },
         function(err){
           vm.error = 'Error sending forgot password email - ' + err;

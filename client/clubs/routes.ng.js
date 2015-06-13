@@ -16,18 +16,14 @@
           }]
         }
       })
-      .state('main', {
+      .state('map', {
         url: '/',
-        views: {
-          'main-map': {
-            templateUrl: 'client/clubs/views/map.ng.html',
-            controller: 'MapCtrl as vm',
-            resolve: {
-              'subscribe': ['$meteor', function($meteor) {
-                return $meteor.subscribe('clubs');
-              }]
-            }
-          }
+        templateUrl: 'client/clubs/views/map.ng.html',
+        controller: 'MapCtrl as vm',
+        resolve: {
+          'subscribe': ['$meteor', function($meteor) {
+            return $meteor.subscribe('clubs');
+          }]
         }
       });
     });

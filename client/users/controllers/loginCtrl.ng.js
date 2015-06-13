@@ -9,7 +9,7 @@
 
   function LoginCtrl($meteor, $state, $rootScope, RouterService){
     var vm = this;
-    RouterService.redirectIfLoggedIn('tabs.account');
+    RouterService.redirectIfLoggedIn('account');
 
     vm.credentials = {
       email: '',
@@ -20,9 +20,9 @@
     vm.register = register;
 
     function login() {
-      $meteor.loginWithPassword(vm.credentials.email, vm.credentials.password).then(
+      $meteor.loginWithPassword(vm.credentials.email.toLowerCase(), vm.credentials.password).then(
         function(){
-          $state.go('tabs.map');
+          $state.go('map');
         },
         function(err){
           vm.error = 'Login error - ' + err;
@@ -31,9 +31,9 @@
     }
 
     function register(){
-      $meteor.createUser(vm.credentials).then(
+      $meteor.createUser({ email: vm.credentials.email.toLowerCase(), password: vm.credentials.password }).then(
         function(){
-          $state.go('tabs.account');
+          $state.go('map');
         },
         function(err){
           vm.error = 'Registration error - ' + err;

@@ -5,12 +5,14 @@
 </head>
 
 <body layout="column">
-  <md-toolbar style="position: absolute; z-index: 1">
+  <md-toolbar class="main-toolbar md-whiteframe-z4">
     <div class="md-toolbar-tools">
-      <div class="md-indent md-headline">
+      <div class="md-indent md-headline" ui-sref="map">
         <h1>WARSAW</h1>
       </div>
+      <span flex></span>
+      <md-button ui-sref="account">Account</md-button>
     </div>
   </md-toolbar>
-  <ui-view name="main-map"></ui-view>
+  <ui-view></ui-view>
 </body>

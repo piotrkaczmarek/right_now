@@ -1,24 +1,19 @@
-<ion-view>
-  <ion-content layout="row">
+<md-content layout="column" layout-padding>
+  <md-input-container>
+    <label>Email</label>
+    <input type="text" ng-model="vm.credentials.email" />
     <div ng-show="vm.error"><small>{{ vm.error }}</small></div>
-    <form layout="column">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Email</span>
-          <input type="text" ng-model="vm.credentials.email" aria-label="email" />
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="vm.credentials.password" aria-label="password" />
-        </label>
-      </div>
-      <div class="padding">
-        <button class="button button-light" ng-click="vm.login()" aria-label="login">Sign In</button>
-        <button class="button button-light" ng-click="vm.register()">Create Account</button>
-      </div>
-    </form>
-    <div class="padding">
-      <button class="button button-small button-light" ui-sref="tabs.resetpassword">Forgot password?</button>
-    </div>
-  </ion-content>
-</ion-view>
+  </md-input-container>
+  <md-input-container>
+    <label>Password</label>
+    <input type="password" ng-model="vm.credentials.password" />
+  </md-input-container>
+  <section layout="row">
+    <md-button class="md-raised" ng-click="vm.login()" >Log In</md-button>
+    <md-button class="md-raised" ng-click="vm.register()" >Create Account</md-button>
+  </section>
+  <span flex></span>
+  <section layout="row">
+    <md-button ui-sref="resetpassword" >Forgot password?</md-button>
+  </section>
+</md-content>

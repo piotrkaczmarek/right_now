@@ -4,7 +4,7 @@
   angular.module('rightNow').run(function($rootScope, $state, $location) {
     $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
       if (error === 'AUTH_REQUIRED') {
-        $state.go('tabs.login');
+        $state.go('login');
       }
     });
   });

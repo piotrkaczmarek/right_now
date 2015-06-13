@@ -1,7 +1,4 @@
-<ion-view>
-  <ion-content>
-    <button class="button button-light" ui-sref="tabs.login" ng-hide="$root.currentUser">Login</button>
-    <div ng-show="$root.currentUser">{{ $root.currentUser }}</div>
-    <button class="button button-light" ui-sref="tabs.logout" ng-show="$root.currentUser">Logout</button>
-  </ion-content>
-</ion-view>
+<md-content layout="column" layout-padding>
+  <div ng-show="$root.currentUser">{{ $root.currentUser }}</div>
+  <md-button class="md-raised" ui-sref="logout" ng-show="$root.currentUser">Logout</md-button>
+</md-content>

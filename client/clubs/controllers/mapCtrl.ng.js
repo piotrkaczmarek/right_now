@@ -42,8 +42,7 @@
     };
 
     leafletData.getMap().then(function(map) {
-      map._container.style.height = $window.innerHeight + 'px';
-      map._controlContainer.firstChild.style.paddingTop = "80px"
+      map._container.style.height = ($window.innerHeight - 63) + 'px';
       map.invalidateSize();
     });
 

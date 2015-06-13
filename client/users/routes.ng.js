@@ -8,7 +8,7 @@
     });
 
     $stateProvider
-      .state('tabs.account', {
+      .state('account', {
         url: '/account',
           templateUrl: 'client/users/views/account.ng.html',
           controller: 'AccountCtrl as vm',
@@ -18,7 +18,7 @@
             }]
           }
       })
-      .state('tabs.login', {
+      .state('login', {
         url: '/login',
           templateUrl: 'client/users/views/login.ng.html',
           controller: 'LoginCtrl as vm',
@@ -28,17 +28,17 @@
             }]
           }
       })
-      .state('tabs.resetpassword', {
+      .state('resetpassword', {
         url: '/resetpw',
           templateUrl: 'client/users/views/reset-password.ng.html',
           controller: 'ResetCtrl as vm'
       })
-      .state('tabs.logout', {
+      .state('logout', {
         url: '/logout',
           resolve: {
             "logout": ['$meteor', '$state', function($meteor, $state) {
               return $meteor.logout().then(function(){
-                $state.go('tabs.login');
+                $state.go('login');
               }, function(err){
                 console.log('logout error - ', err);
               });
