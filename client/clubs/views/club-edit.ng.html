@@ -1,52 +1,49 @@
-<ion-view>
-  <ion-content>
-    <div class="row club-card">
-      <ion-header-bar class="bar bar-header bar-positive">
-        <h1 class="title">{{vm.club.name}}</h1>
-      </ion-header-bar>
+<md-content layout="column" layout-padding>
+  <h1>{{vm.club.name}}</h1>
+  <div layout>
+    <div flex="10" layout layout-align="center center">
+      <span class="md-body-1">Crowd</span>
     </div>
-    <div class="row">
-      <div class="list col col-100">
-        <label class="item range item-input">
-          <div class="input-label">Crowd</div>
-          <div class="">
-            <input type="range" name="crowd" min="0" max="100" ng-model="vm.club.crowd">
-          </div>
-          {{vm.club.crowd | labelFilter : vm.attributeLabels.crowd}}
-        </label>
-        <label class="item range item-input">
-          <span class="input-label">Entry Queue</span>
-          <span><input type="range" name="queue" min="0" max="100" ng-model="vm.club.queue"></span>
-          {{vm.club.queue | labelFilter : vm.attributeLabels.queue}}
-        </label>
-        <label class="item range item-input">
-          <span class="input-label">Gender Ratio</span>
-          <span><input type="range" name="gender-ratio" min="0" max="100" ng-model="vm.club.genderRatio"></span>
-          {{vm.club.genderRatio | labelFilter : vm.attributeLabels.genderRatio}}
-        </label>
-        <ion-item class="item item-input item-select">
-          <div class="input-label">
-            Music Type
-          </div>
-          <select ng-model="vm.club.musicType">
-            <option selected>Pop</option>
-            <option>Rock</option>
-            <option>EDM</option>
-            <option>House</option>
-            <option>80s/90s</option>
-          </select>
-        </ion-item>
-        <ion-item class="item item-input">
-          <div class="input-label">
-            Now Playing
-          </div>
-          <input type="text" ng-model="vm.club.musicPlaying">
-        </ion-item>
-      </div>
+    <md-slider flex ng-model="vm.club.crowd" step="1" min="1" max="100"></md-slider>
+    <div flex="20" layout layout-align="center center">
+      {{vm.club.crowd | labelFilter : vm.attributeLabels.crowd}}
     </div>
-    <div class="row">
-      <button class="button" ng-click="vm.save()">Save</button>
-      <button class="button" ng-click="vm.goBack()">Back</button>
+  </div>
+  <div layout>
+    <div flex="10" layout layout-align="center center">
+      <span class="md-body-1">Entry Queue</span>
     </div>
-  </ion-content>
-</ion-view>
+    <md-slider flex ng-model="vm.club.queue" step="1" min="1" max="100"></md-slider>
+    <div flex="20" layout layout-align="center center">
+      {{vm.club.queue | labelFilter : vm.attributeLabels.queue}}
+    </div>
+  </div>
+  <div layout>
+    <div flex="10" layout layout-align="center center">
+      <span class="md-body-1">Gender Ratio</span>
+    </div>
+    <md-slider flex ng-model="vm.club.genderRatio" step="1" min="1" max="100"></md-slider>
+    <div flex="20" layout layout-align="center center">
+      {{vm.club.genderRatio | labelFilter : vm.attributeLabels.genderRatio}}
+    </div>
+  </div>
+  <div layout>
+    <div flex="10" layout layout-align="center center">
+      <span class="md-body-1">Music Type</span>
+    </div>
+    <md-chips ng-model="vm.club.musicType" md-autocomplete-snap md-require-match>
+      <md-autocomplete
+        md-selected-item="vm.chips.selectedItem"
+        md-search-text="vm.chips.searchText"
+        md-items="item in vm.chips.querySearch(vm.chips.searchText)"
+        md-item-text="item">
+        <span md-highlight-text="vm.chips.searchText">{{item}}</span>
+      </md-autocomplete>
+    </md-chips>
+  </div>
+  <span flex></span>
+  <div layout>
+    <md-button class="md-raised" ui-sref="map({lat: vm.club.location.lat, lng: vm.club.location.lng})">Back</md-button>
+    <md-button class="md-raised" ng-click="vm.submit()">Submit</md-button>
+  </div>
+</md-content>

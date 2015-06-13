@@ -7,22 +7,38 @@
 
   ClubEditCtrl.$inject = [
     '$stateParams',
+    '$state',
     'ClubsFactory',
-    'RouterService',
-    'attributeLabels'
+    'attributeLabels',
+    'musicTypes'
   ];
 
-  function ClubEditCtrl($stateParams, ClubsFactory, RouterService, attributeLabels) {
+  function ClubEditCtrl($stateParams, $state, ClubsFactory, attributeLabels, musicTypes) {
     var vm = this;
-    vm.save = save;
-    vm.goBack = RouterService.goBack;
+    vm.submit = submit;
     vm.club = ClubsFactory.club($stateParams.id);
     vm.attributeLabels = attributeLabels;
+    vm.chips = {
+      selectedItem: null,
+      searchText: null,
+      querySearch: querySearch,
+      selectedMusicTypes: []
+    };
 
-    function save() {
+    function querySearch(query) {
+      return query ? musicTypes.filter(musicTypeFilter(query)) : [];
+    }
+
+    function musicTypeFilter(query) {
+      return function(musicType) {
+        return (musicType.indexOf(query.toLowerCase()) == 0)
+      }
+    }
+
+    function submit() {
       vm.club.reportTime = new Date();
       vm.club.save();
-      vm.goBack();
+      $state.go('map', { lat: vm.club.location.lat, lng: vm.club.location.lng });
     }
   }
 })();

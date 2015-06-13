@@ -17,7 +17,8 @@
         }
       })
       .state('map', {
-        url: '/',
+        url: '/?lat&lng',
+        reloadOnSearch : false,
         templateUrl: 'client/clubs/views/map.ng.html',
         controller: 'MapCtrl as vm',
         resolve: {

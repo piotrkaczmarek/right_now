@@ -8,7 +8,7 @@ Meteor.startup(function () {
         genderRatio: 40,
         queue: 0,
         musicPlaying: 'Keisha Hideaway',
-        musicType: 'Pop',
+        musicType: ['pop', 'rock'],
         reportTime: new Date(2015,4,25,22,30,0,0)
        },
       {
@@ -18,7 +18,7 @@ Meteor.startup(function () {
         genderRatio: 60,
         queue: 30,
         musicPlaying: 'Deorro Five Hours',
-        musicType: 'House',
+        musicType: ['house', 'electro'],
         reportTime: new Date(2015,4,25,22,45,0,0)
        },
     ];

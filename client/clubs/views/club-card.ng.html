@@ -1,6 +1,6 @@
 <md-subheader>
   {{club.name}}
-  <md-button class="md-primary" ng-if="$root.currentUser" ui-sref="club-edit({id: club._id})">Edit</md-button>
+  <md-button class="md-primary" ng-if="$root.currentUser" ng-click="vm.goEdit(club._id)">Edit</md-button>
 </md-subheader>
 <md-list>
   <md-list-item>
