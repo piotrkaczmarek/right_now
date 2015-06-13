@@ -5,9 +5,9 @@
     .module('rightNow')
     .factory('RouterService', RouterService);
 
-  RouterService.$inject = ['$state', '$ionicHistory', '$rootScope'];
+  RouterService.$inject = ['$state', '$rootScope'];
 
-  function RouterService($state, $ionicHistory, $rootScope) {
+  function RouterService($state, $rootScope) {
     return {
       redirectIfLoggedIn: redirectIfLoggedIn
     };

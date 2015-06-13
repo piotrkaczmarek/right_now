@@ -7,9 +7,7 @@
 meteor-platform
 urigo:angular
 angularui:angular-ui-router
-urigo:ionic
 fourseven:scss
-meteoric:ionic-sass
 piotrkaczmarek:angular-leaflet-directive
 mrt:leaflet-label
 accounts-password

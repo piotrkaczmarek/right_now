@@ -14,7 +14,7 @@
 
     function adjustMapHeight() {
       leafletData.getMap().then(function(map) {
-        map._container.style.height = ($window.innerHeight - 63) + 'px';
+        map._container.style.height = ($window.innerHeight - 70) + 'px';
         map.invalidateSize();
       });
     }
