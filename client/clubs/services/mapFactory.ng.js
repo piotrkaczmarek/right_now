@@ -5,9 +5,9 @@
     .module('rightNow')
     .factory('MapFactory', MapFactory);
 
-  MapFactory.$inject = ['ClubsFactory', '$stateParams', '$rootScope'];
+  MapFactory.$inject = ['ClubsFactory', '$stateParams', 'leafletBoundsHelpers', '$rootScope'];
 
-  function MapFactory(ClubsFactory, $stateParams, $rootScope) {
+  function MapFactory(ClubsFactory, $stateParams, leafletBoundsHelpers, $rootScope) {
     return {
       map: map
     };
@@ -16,10 +16,13 @@
       var center = centerFromQueryOrDefault();
       var clubs = ClubsFactory.clubs()
       return {
+        defaults: {
+          minZoom: 13
+        },
         center: {
           lat: center.lat,
           lng: center.lng,
-          zoom: 20
+          zoom: 16
         },
         layers: {
           baselayers: {
@@ -30,6 +33,7 @@
             }
           }
         },
+        maxbounds: bounds(),
         markers: markers(clubs)
       };
     }
@@ -49,6 +53,13 @@
           // message: '<club-card></club-card>'
         };
       })
+    }
+
+    function bounds() {
+      return leafletBoundsHelpers.createBoundsFromArray([
+        [52.31645452105213, 21.233139038085938], // Warsaw NE
+        [52.14823737817847, 20.793685913085934]  // Warsaw SW
+      ])
     }
 
     function centerFromQueryOrDefault() {
